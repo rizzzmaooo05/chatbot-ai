@@ -23,4 +23,4 @@ bot.on('message', async (response) => {
   bot.sendMessage(id, answer)
 })
 
-
+export default bot
