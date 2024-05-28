@@ -1,6 +1,7 @@
 import TelegramBot from "node-telegram-bot-api";
 import axios from "axios";
 import 'dotenv/config'
+import express from "express";
 
 
 const token = process.env.TELEGRAM_BOT_API_TOKEN
@@ -23,4 +24,6 @@ bot.on('message', async (response) => {
   bot.sendMessage(id, answer)
 })
 
-export default bot
+const app = express()
+app.listen(9002, () => console.log('server run'))
+export default app
