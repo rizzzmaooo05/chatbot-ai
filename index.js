@@ -11,6 +11,10 @@ bot.on('message', async (response) => {
   const id = response.from.id
   const message = response.text
 
+  if(message == '/start') return bot.sendMessage(id, 'Silahkan ketik perintah Anda untuk dieksekusi oleh Rizzz AI!')
+
+  bot.sendMessage(id, 'Tunggu sebentar ...')
+
   const apiResponse = await axios.post(`${apiUrl}/chat`, {
     chatMessage: message
   })
